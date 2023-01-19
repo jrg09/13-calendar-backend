@@ -10,7 +10,7 @@ dbConnection();
 const app = express();
 
 //habilitar directorio público
-app.use(express.static("/public"));
+app.use(express.static("public"));
 
 //lectura y parseo de body
 app.use(express.json());
