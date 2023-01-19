@@ -18,6 +18,7 @@ app.use(cors());
 
 //rutas
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/events", require("./routes/events"));
 
 const port = process.env.PORT || 8090;
 
