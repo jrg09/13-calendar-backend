@@ -23,7 +23,7 @@ app.use("/api/events", require("./routes/events"));
 const port = process.env.PORT || 8090;
 
 //escuchar peticiones
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Servidor corriendo en http://127.0.0.1:${port}/`);
 });
 
