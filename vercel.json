@@ -22,6 +22,10 @@
     {
       "src": "/assets/(.*)",
       "dest": "public/assets/$1"
+    },
+    {
+      "src": "/auth/*",
+      "dest": "public/index.html"
     }
   ]
 }
