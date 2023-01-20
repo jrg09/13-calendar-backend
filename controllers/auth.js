@@ -30,7 +30,11 @@ const crearUsuario = async (req = request, res = response) => {
     res.status(201).json({ date: new Date(), ok: true, uid: usuario.id, name: usuario.name, token });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ ok: false, msg: "Error en la creación del usuario." });
+
+    setTimeout(() => {
+      return res.status(500).json({ ok: false, msg: "Error en la creación del usuario." });
+    }, 3000);
+    return;
   }
 };
 
@@ -75,7 +79,7 @@ const loginUsuario = async (req = request, res = response) => {
 const renovarToken = async (req = request, res = response) => {
   const { uid, name } = req;
   const token = await generarJsonWebToken(uid, name);
-  res.send({ date: new Date(), ok: true, msg: "renew", token });
+  res.send({ ok: true, uid, name, token });
 };
 
 module.exports = { crearUsuario, loginUsuario, renovarToken };
