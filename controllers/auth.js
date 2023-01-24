@@ -68,6 +68,7 @@ const loginUsuario = async (req = request, res = response) => {
 
     //generar jwt
     const token = await generarJsonWebToken(usuario.id, usuario.name);
+    console.log(`loginUsaurio token generado: ${token}`);
 
     res.json({ ok: true, uid: usuario.id, name: usuario.name, token });
   } catch (error) {
@@ -79,6 +80,7 @@ const loginUsuario = async (req = request, res = response) => {
 const renovarToken = async (req = request, res = response) => {
   const { uid, name } = req;
   const token = await generarJsonWebToken(uid, name);
+  console.log(`renovarToken token generado: ${token}`);
   res.send({ ok: true, uid, name, token });
 };
 

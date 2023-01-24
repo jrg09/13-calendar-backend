@@ -16,7 +16,7 @@ const generarJsonWebToken = (uid, name) => {
           reject("No se pudo generar el token");
         }
 
-        console.log(`Token generado: ${token}`);
+        // console.log(`Token generado: ${token}`);
         resolve(token);
       }
     );
